@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #059669;
+  --color-accent: #FBBF24;
+  --font-poppins: Poppins, sans-serif;
+}
+
+html[lang="ur"] body {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  line-height: 2;
+}

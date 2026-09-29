@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StudyNest</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @custom-variant dark (&:where(.dark, .dark *));
+  @theme { --color-primary:#059669; --color-accent:#FBBF24; --font-poppins:Poppins,sans-serif; }
+  html[lang="ur"] body { font-family:'Noto Nastaliq Urdu',serif; line-height:2; }
+</style>
+</head>
+<body class="bg-stone-50 text-stone-900 dark:bg-zinc-950 dark:text-stone-50 font-poppins transition-colors">
+
+<nav class="sticky top-0 z-50 border-b border-stone-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
+  <div class="mx-auto flex h-20 max-w-6xl items-center justify-between px-6">
+    <a href="#" class="flex items-center gap-2 text-xl font-medium text-primary">
+      <span class="grid h-8 w-8 place-items-center rounded-lg bg-primary text-white">S</span>StudyNest
+    </a>
+    <div class="hidden gap-8 text-stone-600 dark:text-zinc-400 md:flex">
+      <a href="#courses" class="hover:text-primary" data-i18n="nav_courses">Courses</a>
+      <a href="#features" class="hover:text-primary" data-i18n="nav_features">Features</a>
+      <a href="#pricing" class="hover:text-primary" data-i18n="nav_pricing">Pricing</a>
+      <a href="#faq" class="hover:text-primary" data-i18n="nav_faq">FAQ</a>
+    </div>
+    <div class="flex items-center gap-3">
+     <button id="langBtn" class="rounded-full border border-primary px-3 py-1 text-sm text-primary">اردو</button>
+      <button id="themeBtn" class="h-9 w-9 rounded-full border border-stone-300 dark:border-zinc-700" aria-label="Toggle theme"><span id="themeIcon">🌙</span></button>
+      <a href="#pricing" class="hidden rounded-lg bg-primary px-4 py-2 text-white hover:bg-emerald-700 sm:block" data-i18n="cta_start">Get started</a>
+      <button id="menuBtn" class="md:hidden" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div id="mobileMenu" class="hidden flex-col gap-4 border-t px-6 py-4 dark:border-zinc-800 md:hidden">
+    <a href="#courses" data-i18n="nav_courses">Courses</a><a href="#features" data-i18n="nav_features">Features</a>
+    <a href="#pricing" data-i18n="nav_pricing">Pricing</a><a href="#faq" data-i18n="nav_faq">FAQ</a>
+  </div>
+</nav>
+
+<header class="mx-auto grid max-w-6xl items-center gap-10 px-6 py-20 md:grid-cols-2">
+  <div>
+    <h1 class="text-4xl font-semibold leading-tight md:text-5xl" data-i18n="hero_title">Learn skills. Build your future.</h1>
+    <p class="mt-4 max-w-md text-stone-500 dark:text-zinc-400" data-i18n="hero_text">Live classes, certificates, and lifetime access to 200+ courses.</p>
+    <div class="mt-8 flex gap-3">
+      <a href="#pricing" class="rounded-lg bg-primary px-6 py-3 text-white hover:bg-emerald-700" data-i18n="cta_start">Get started</a>
+      <a href="#courses" class="rounded-lg border border-stone-300 px-6 py-3 hover:border-primary dark:border-zinc-700" data-i18n="cta_demo">Watch demo</a>
+    </div>
+  </div>
+  <div class="rounded-3xl bg-emerald-100 p-8 shadow-xl dark:bg-emerald-950">
+    <div class="rounded-2xl bg-white p-6 dark:bg-zinc-900">
+      <p class="text-sm text-stone-500 dark:text-zinc-400" data-i18n="hero_card">Your progress</p>
+      <p class="mt-1 text-3xl font-semibold text-primary">72%</p>
+      <div class="mt-3 h-3 rounded-full bg-stone-200 dark:bg-zinc-800"><div class="h-3 w-[72%] rounded-full bg-primary"></div></div>
+      <span class="mt-4 inline-block rounded-full bg-accent px-3 py-1 text-sm text-stone-900" data-i18n="hero_badge">Certificate soon</span>
+    </div>
+  </div>
+</header>
+
+<section class="mx-auto grid max-w-6xl gap-4 px-6 pb-16 sm:grid-cols-3">
+  <div class="rounded-xl border p-6 text-center dark:border-zinc-800 dark:bg-zinc-900"><p class="text-3xl font-semibold text-primary"><span class="count" data-to="10000">0</span>+</p><p class="text-stone-500 dark:text-zinc-400" data-i18n="stat1">Students</p></div>
+  <div class="rounded-xl border p-6 text-center dark:border-zinc-800 dark:bg-zinc-900"><p class="text-3xl font-semibold text-primary"><span class="count" data-to="200">0</span>+</p><p class="text-stone-500 dark:text-zinc-400" data-i18n="stat2">Courses</p></div>
+  <div class="rounded-xl border p-6 text-center dark:border-zinc-800 dark:bg-zinc-900"><p class="text-3xl font-semibold text-amber-600 dark:text-accent">4.8</p><p class="text-stone-500 dark:text-zinc-400" data-i18n="stat3">Rating</p></div>
+</section>
+
+<section id="courses" class="mx-auto max-w-6xl px-6 py-16">
+  <h2 class="text-center text-3xl font-semibold" data-i18n="courses_title">Pick a course category</h2>
+  <div class="mt-10 grid grid-cols-2 gap-4 md:grid-cols-3">
+    <div class="rounded-xl border p-6 transition hover:-translate-y-1 hover:border-primary dark:border-zinc-800 dark:bg-zinc-900"><p class="font-medium" data-i18n="c1">Web development</p></div>
+    <div class="rounded-xl border p-6 transition hover:-translate-y-1 hover:border-primary dark:border-zinc-800 dark:bg-zinc-900"><p class="font-medium" data-i18n="c2">Graphic design</p></div>
+    <div class="rounded-xl border p-6 transition hover:-translate-y-1 hover:border-primary dark:border-zinc-800 dark:bg-zinc-900"><p class="font-medium" data-i18n="c3">Artificial intelligence</p></div>
+    <div class="rounded-xl border p-6 transition hover:-translate-y-1 hover:border-primary dark:border-zinc-800 dark:bg-zinc-900"><p class="font-medium" data-i18n="c4">Digital marketing</p></div>
+    <div class="rounded-xl border p-6 transition hover:-translate-y-1 hover:border-primary dark:border-zinc-800 dark:bg-zinc-900"><p class="font-medium" data-i18n="c5">Freelancing</p></div>
+    <div class="rounded-xl border p-6 transition hover:-translate-y-1 hover:border-primary dark:border-zinc-800 dark:bg-zinc-900"><p class="font-medium" data-i18n="c6">English speaking</p></div>
+  </div>
+</section>
+
+<section id="features" class="bg-white py-16 dark:bg-zinc-900">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="text-center text-3xl font-semibold" data-i18n="features_title">Everything you need to learn</h2>
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="rounded-xl bg-stone-50 p-6 dark:bg-zinc-950"><h3 class="font-medium text-primary" data-i18n="f1_t">Live classes</h3><p class="mt-2 text-sm text-stone-500 dark:text-zinc-400" data-i18n="f1_d">Ask questions and learn with teachers in real time.</p></div>
+      <div class="rounded-xl bg-stone-50 p-6 dark:bg-zinc-950"><h3 class="font-medium text-primary" data-i18n="f2_t">Certificates</h3><p class="mt-2 text-sm text-stone-500 dark:text-zinc-400" data-i18n="f2_d">Finish a course and add the certificate to your CV.</p></div>
+      <div class="rounded-xl bg-stone-50 p-6 dark:bg-zinc-950"><h3 class="font-medium text-primary" data-i18n="f3_t">Lifetime access</h3><p class="mt-2 text-sm text-stone-500 dark:text-zinc-400" data-i18n="f3_d">Pay once and revisit lessons whenever you want.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="mx-auto max-w-6xl px-6 py-16">
+  <h2 class="text-center text-3xl font-semibold" data-i18n="test_title">What students say</h2>
+  <div class="mt-10 grid gap-6 md:grid-cols-3">
+    <div class="rounded-xl border p-6 dark:border-zinc-800 dark:bg-zinc-900"><p data-i18n="t1">The web course helped me land my first freelance client.</p><p class="mt-4 text-sm font-medium text-primary">Ayesha, Lahore</p></div>
+    <div class="rounded-xl border p-6 dark:border-zinc-800 dark:bg-zinc-900"><p data-i18n="t2">Live classes made hard topics easy to follow.</p><p class="mt-4 text-sm font-medium text-primary">Hamza, Karachi</p></div>
+    <div class="rounded-xl border p-6 dark:border-zinc-800 dark:bg-zinc-900"><p data-i18n="t3">Urdu support means my whole family can learn too.</p><p class="mt-4 text-sm font-medium text-primary">Sana, Multan</p></div>
+  </div>
+</section>
+
+<section id="pricing" class="bg-white py-16 dark:bg-zinc-900">
+  <div class="mx-auto max-w-6xl px-6 text-center">
+    <h2 class="text-3xl font-semibold" data-i18n="price_title">Choose your plan</h2>
+    <div class="mt-6 inline-flex rounded-full border p-1 dark:border-zinc-700">
+      <button id="btnMonthly" class="rounded-full bg-primary px-5 py-1 text-white" data-i18n="monthly">Monthly</button>
+      <button id="btnYearly" class="rounded-full px-5 py-1" data-i18n="yearly">Yearly</button>
+    </div>
+    <div class="mt-10 grid gap-6 text-start md:grid-cols-3">
+      <div class="rounded-xl border p-6 dark:border-zinc-800"><h3 class="font-medium">Free</h3><p class="mt-3 text-3xl font-semibold">$0</p><p class="mt-3 text-sm text-stone-500 dark:text-zinc-400" data-i18n="p1">5 starter courses</p></div>
+      <div class="relative rounded-xl border-2 border-primary p-6"><span class="absolute -top-3 rounded-full bg-accent px-3 py-1 text-xs text-stone-900" data-i18n="popular">Most popular</span><h3 class="font-medium">Pro</h3><p class="mt-3 text-3xl font-semibold">$<span class="price" data-m="12" data-y="99">12</span><span class="text-sm font-normal text-stone-500" id="per"> /mo</span></p><p class="mt-3 text-sm text-stone-500 dark:text-zinc-400" data-i18n="p2">All courses and certificates</p></div>
+      <div class="rounded-xl border p-6 dark:border-zinc-800"><h3 class="font-medium">Team</h3><p class="mt-3 text-3xl font-semibold">$<span class="price" data-m="39" data-y="349">39</span><span class="text-sm font-normal text-stone-500 per2"> /mo</span></p><p class="mt-3 text-sm text-stone-500 dark:text-zinc-400" data-i18n="p3">Up to 10 learners</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="mx-auto max-w-2xl px-6 py-16">
+  <h2 class="text-center text-3xl font-semibold" data-i18n="faq_title">Questions and answers</h2>
+  <div class="mt-8 divide-y dark:divide-zinc-800">
+    <details class="py-4"><summary class="cursor-pointer font-medium" data-i18n="q1">Can I learn at my own pace?</summary><p class="mt-2 text-stone-500 dark:text-zinc-400" data-i18n="a1">Yes. Recorded lessons stay available for as long as your plan is active.</p></details>
+    <details class="py-4"><summary class="cursor-pointer font-medium" data-i18n="q2">Do I get a certificate?</summary><p class="mt-2 text-stone-500 dark:text-zinc-400" data-i18n="a2">Every finished course on Pro and Team comes with a certificate.</p></details>
+    <details class="py-4"><summary class="cursor-pointer font-medium" data-i18n="q3">Can I cancel anytime?</summary><p class="mt-2 text-stone-500 dark:text-zinc-400" data-i18n="a3">Yes. Cancel from your account and you won't be charged again.</p></details>
+  </div>
+</section>
+
+<section class="mx-auto max-w-4xl px-6 pb-16">
+  <div class="rounded-2xl bg-primary p-10 text-center text-white">
+    <h2 class="text-3xl font-semibold" data-i18n="cta_title">Start learning today</h2>
+    <a href="#pricing" class="mt-6 inline-block rounded-lg bg-white px-6 py-3 font-medium text-primary" data-i18n="cta_btn">Join StudyNest</a>
+  </div>
+</section>
+
+<footer class="bg-emerald-950 py-10 text-emerald-100">
+  <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+    <p class="font-medium">StudyNest</p>
+    <div class="flex gap-6 text-sm"><a href="#courses" data-i18n="nav_courses">Courses</a><a href="#pricing" data-i18n="nav_pricing">Pricing</a><a href="#faq" data-i18n="nav_faq">FAQ</a></div>
+    <p class="text-sm">© 2026 StudyNest</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
